@@ -12,10 +12,10 @@
     }
 
     .section {
-        @apply flex flex-col gap-4 items-center w-full py-7 bg-black text-white lg:flex-row lg:even:flex-row-reverse;
+        @apply flex flex-col gap-20 items-center w-full py-7 bg-black text-white lg:flex-row lg:even:flex-row-reverse;
     }
 
     .content-padding {
-        @apply px-4 lg:px-[10rem] py-[2rem]  ;
+        @apply px-4 lg:px-[10rem] py-[2rem];
     }
 }

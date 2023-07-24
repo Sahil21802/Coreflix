@@ -1,5 +1,6 @@
 import React from "react";
 import Cover from "../assets/cover.svg"
+import Navbar from "../elements/Navbar";
 import Container  from "../assets/container.jpg"
 import Container1 from "../assets/container 1.jpg"
 import Container2 from "../assets/container 2.jpg"
@@ -7,6 +8,8 @@ import Container3 from "../assets/container 3.jpg"
 
 export default function Home(){
     return(
+        <div>
+            <Navbar />
         <main>
             <section style={{
                 background: `url("${Cover}") no-repeat`,
@@ -55,5 +58,6 @@ export default function Home(){
                 </div>
             </section>
         </main>
+        </div>
     )
 }
