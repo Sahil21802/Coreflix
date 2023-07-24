@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-primary {
+        @apply  bg-[#E50914] font-bold px-4 text-white rounded py-2;
+    }
+
+    .input {
+        @apply w-full py-2 px-4 rounded border-2 border-solid bg-[#00000070] border-[#ffffff36];
+    }
+
+    .section {
+        @apply flex flex-col gap-4 items-center w-full py-7 bg-black text-white lg:flex-row lg:even:flex-row-reverse;
+    }
+
+    .content-padding {
+        @apply px-4 lg:px-[10rem] py-[2rem]  ;
+    }
+}

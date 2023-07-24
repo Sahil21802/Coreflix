@@ -1,12 +1,12 @@
 import logo from './logo.svg';
-import Login from "./pages/login";
+import Home from "./pages/home";
 import './App.css';
 
 function App() {
   return (
     <div>
       <h1>React</h1>
-      <Login />
+      <Home />
     </div>
   );
 }
