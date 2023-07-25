@@ -18,4 +18,8 @@
     .content-padding {
         @apply px-4 lg:px-[10rem] py-[2rem];
     }
+
+    .footer{
+        @apply bg-black text-white py-5;
+    }
 }

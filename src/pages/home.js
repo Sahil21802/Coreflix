@@ -5,6 +5,7 @@ import Container  from "../assets/container.jpg"
 import Container1 from "../assets/container 1.jpg"
 import Container2 from "../assets/container 2.jpg"
 import Container3 from "../assets/container 3.jpg"
+import Footer from "../elements/footer";
 
 export default function Home(){
     return(
@@ -58,6 +59,7 @@ export default function Home(){
                 </div>
             </section>
         </main>
+        <Footer/>
         </div>
     )
 }
