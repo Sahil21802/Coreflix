@@ -58,8 +58,18 @@ export default function Home(){
                     <img src={Container2} alt="container2 image"></img>
                 </div>
             </section>
+            <section className="text-slate-100 w-full py-20 px-4 grid place-items-center bg-black">
+                <div>
+                    <h1 className="text-sm font-bold text-center lg:text-2xl py-2">Ready to watch? Enter your email to create or restart your membership.</h1>
+                    <form className="flex flex-col justify-center item-center py-4 gap-2 lg:flex-row">
+                        <input className="input py-4 px-3 lg:max-w-[300px]" placeholder="Email-address" type ="email"></input>
+                        <button className="btn-primary py-4 px-10 w-max" type ="button">Get Started
+                        </button>
+                    </form>
+                </div>
+            </section>
         </main>
-        <Footer/>
+        
         </div>
     )
 }
