@@ -2,15 +2,16 @@ const express = require("express");
 const { MongoClient } = require("mongodb");
 const bodyParser = require("body-parser");
 const server = express();
+const cors = require("cors");
 const port = 8080;
 const uri =
-  "mongodb+srv://jaithecore:J8894097836j@cluster0.b9m8t9w.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://ssharma438500:OImQXAPi7rHNeCBe@cluster0.q7sln4w.mongodb.net/?retryWrites=true&w=majority";
 
 const client = new MongoClient(uri);
 
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
-
+server.use(cors())
 async function run() {
   try {
     await client.connect();
@@ -56,6 +57,18 @@ async function run() {
 
       res.send("The Document is deleted !");
     });
+
+    server.post("/login", async(req, res) => {
+      let { email, password } = req.body
+
+      let feedback = await client.db("coreflix").collection("users").findOne({ email: email })
+
+      if(password === feedback.password) {
+        res.json({ message: "Login Successfully" })
+      } else {
+        res.json({ message: "Unauthorized acess!" })
+      }
+    })
 
     server.listen(port, () => {
       console.log(`Server is running at http://localhost:${port}`);
