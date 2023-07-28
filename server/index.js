@@ -12,6 +12,9 @@ const client = new MongoClient(uri);
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 server.use(cors())
+server.use("/", express.static("build"))
+
+
 async function run() {
   try {
     await client.connect();
@@ -22,7 +25,7 @@ async function run() {
     console.log("Connection Succesfully !");
 
     // Fetching Data from  the collection by the GET Request
-    server.get("/", async (req, res) => {
+    server.get("/users", async (req, res) => {
       let feedback = await client
         .db("coreflix")
         .collection("users")
@@ -34,17 +37,16 @@ async function run() {
     });
 
     // POST
-    server.post("/", async (req, res) => {
+    server.post("/signup", async (req, res) => {
       // first find the body form the request
       console.log(req.body);
-      let { name, email, password } = req.body;
+      let { email, password } = req.body;
       // Inserting the data in the document
       await client.db("coreflix").collection("users").insertOne({
-        name: name,
         email: email,
         password: password,
       });
-      res.send("Data  is posted !");
+      res.json({message: "User created Successfully!"});
     });
 
     server.post("/delete", async (req, res) => {
