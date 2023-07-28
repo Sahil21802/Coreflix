@@ -1,6 +1,7 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
 const bodyParser = require("body-parser");
+const path = require("path")
 const server = express();
 const cors = require("cors");
 const port = process.env.PORT || 8080;
@@ -9,10 +10,12 @@ const uri =
 
 const client = new MongoClient(uri);
 
+console.log(path.join(__dirname, "build"))
+
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 server.use(cors())
-server.use("/react", express.static("build"))
+server.use("/", express.static("build"))
 
 
 async function run() {
