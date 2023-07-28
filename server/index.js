@@ -3,7 +3,7 @@ const { MongoClient } = require("mongodb");
 const bodyParser = require("body-parser");
 const server = express();
 const cors = require("cors");
-const port = 8080;
+const port = process.env.PORT || 8080;
 const uri =
   "mongodb+srv://ssharma438500:OImQXAPi7rHNeCBe@cluster0.q7sln4w.mongodb.net/?retryWrites=true&w=majority";
 
