@@ -12,7 +12,7 @@ const client = new MongoClient(uri);
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 server.use(cors())
-server.use("/", express.static("build"))
+server.use("/react", express.static("build"))
 
 
 async function run() {
