@@ -11,7 +11,7 @@ export default function Login(){
         // prevent page from reloading
         e.preventDefault()
 
-        let response = await axios.post("http://localhost:8080/login", {
+        let response = await axios.post("https://coreflix.vercel.app/login", {
             email: email,
             password: password
         })

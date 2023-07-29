@@ -11,7 +11,7 @@ export default function Signup(props){
         // prevent page from reloading
         e.preventDefault()
 
-        let response = await axios.post("http://localhost:8080/signup", {
+        let response = await axios.post("https://coreflix.vercel.app/signup", {
             email: email,
             password: password
         })
