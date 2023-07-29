@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import Cover from "../assets/cover.svg";
 import Footer from "../elements/footer.js"
 import axios from "axios";
@@ -11,6 +11,8 @@ export default function Signup(props){
         // prevent page from reloading
         e.preventDefault()
 
+        try{
+
         let response = await axios.post("https://coreflix.vercel.app/signup", {
             email: email,
             password: password
@@ -18,7 +20,20 @@ export default function Signup(props){
 
         console.log(response)
         setMessage(response.data.message)
+
+    } catch(e) {
+        console.log("Error Occured while loging in the users account !")
+        setMessage("Something Went Wrong!")
     }
+    }
+
+    useEffect(() => {
+        if(message) {
+        setTimeout(() => {
+            setMessage("")
+        }, 3000)
+        }
+    }, [message])
 
     return (
         <div>
@@ -27,7 +42,7 @@ export default function Signup(props){
                 <h1 className="text-2xl font-bold lg:text-5xl py-4">Welcome back!
                     Joining Netflix is easy.</h1>
                 <p>Enter your password and you'll be watching in no time.</p>
-                <legend>{message}</legend>
+                <legend className="text-center bg-[#E50914] w-max mx-auto text-white">{message}</legend>
                 <div className="py-2">
                     <input className="input bg-white border-slate-500" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email Address or Phone Number" type ="email" required ></input>
                 </div>
