@@ -40,7 +40,7 @@ export default function Signup(props){
         <div className="grid place-items-center bg-white h-[100vh]" onSubmit={handleSubmit} >
             <form className="w-full px-8 py-12 lg:max-w-[400px]">
                 <h1 className="text-2xl font-bold lg:text-5xl py-4">Welcome back!
-                    Joining Coreflix is easy.</h1>
+                    Joining Netflix is easy.</h1>
                 <p>Enter your password and you'll be watching in no time.</p>
                 <legend className="text-center bg-[#E50914] w-max mx-auto text-white">{message}</legend>
                 <div className="py-2">
